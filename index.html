@@ -236,7 +236,7 @@
                 <label class="required">實際年齡</label>     
                 <div class="input-wrapper">
                     <!-- 「歲」輸入框：獨立灰色細框 -->
-                    <input type="number" id="ageYear" min="0" max="7" placeholder="0~7" style="width: 30%;" required>
+                    <input type="number" id="ageYear" min="0" max="7" placeholder="0~7" style="width: 25%;" required>
                     <span style="font-weight: bold; padding: 10px;">歲</span>
                     <!-- 「月」輸入框：獨立灰色細框 -->
                     <input type="number" id="ageMonth" min="0" max="11" placeholder="0~11" style="width: 30%;" required>
@@ -442,7 +442,7 @@ female: {
 function getAgeKey() {
     const currentYears = document.getElementById('ageYear').value;
     const extraMonths = document.getElementById('ageMonth').value;
-    let totalMonths = currentYears * 12 + number(extraMonths);
+    let totalMonths = currentYears * 12 + parseInt(extraMonths);
 
     alert("totalmonth is"+totalMonths);
     // 0至5歲（0 ~ 60 個月）：維持逐月點對點查表
