@@ -442,7 +442,7 @@ female: {
 function getAgeKey() {
     const currentYears = document.getElementById('ageYear').value;
     const extraMonths = document.getElementById('ageMonth').value;
-    let totalMonths = currentYears * 12 + extraMonths;
+    let totalMonths = number(currentYears) * 12 + number(extraMonths);
 
     alert("totalmonth is"+totalMonths);
     // 0至5歲（0 ~ 60 個月）：維持逐月點對點查表
