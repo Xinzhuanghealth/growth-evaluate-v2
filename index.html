@@ -443,8 +443,7 @@ function getAgeKey() {
     const currentYears = parseInt(document.getElementById('ageYear').value) || 0;
     const extraMonths = parseInt(document.getElementById('ageMonth').value) || 0;
     const totalMonths = currentYears * 12 + extraMonths;
-    
-    alert("totalmonth is"+totalMonths);
+
     // 0至5歲（0 ~ 60 個月）：維持逐月點對點查表
     if (totalMonths <= 60) {return totalMonths.toString(); } 
     // 5至7歲（61 ~ 84 個月）：嚴格執行健康99網站「就近靠攏法」
