@@ -440,9 +440,9 @@ female: {
 
 // 同步衛福部健康99之「就近靠攏」年齡階段算法 (月齡 Key 值校正回歸最終版)
 function getAgeKey() {
-    const currentYears = document.getElementById('ageYear').value;
-    const extraMonths = document.getElementById('ageMonth').value;
-    let totalMonths = currentYears * 12 + parseInt(extraMonths);
+    const currentYears = number(document.getElementById('ageYear').value);
+    const extraMonths = number(document.getElementById('ageMonth').value);
+    let totalMonths = currentYears * 12 + extraMonths;
 
     alert("totalmonth is"+totalMonths);
     // 0至5歲（0 ~ 60 個月）：維持逐月點對點查表
