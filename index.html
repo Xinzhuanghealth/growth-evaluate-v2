@@ -445,22 +445,18 @@ function getAgeKey() {
     const totalMonths = currentYears * 12 + extraMonths;
     
     // 0至5歲（0 ~ 60 個月）：維持逐月點對點查表
-    if (totalMonths <= 60) 
-       {
-        return totalMonths.toString();
-       } 
+    if (totalMonths <= 60) {return totalMonths.toString(); } 
     // 5至7歲（61 ~ 84 個月）：嚴格執行健康99網站「就近靠攏法」
-    else if (totalMonths <= 84) 
-            {
-             if (currentYears === 5) 
+    else if (totalMonths > 84) {return "out_of_range"; }
+          else  if (currentYears === 5) 
                 {
                  if (extraMonths <= 3) return "60";
                  if (extraMonths === 4 || extraMonths === 5) return "66";
                  if (extraMonths === 6) return "66";
                  if (extraMonths >= 7 && extraMonths <= 9) return "66";
-                 if (extraMonths >= 10 && extraMonths <= 11) return "72";
+                 if (extraMonths >= 10 && extraMonths <= 11) return "72";o
                 }
-             else if (currentYears === 6) 
+                else if (currentYears === 6) 
                      {
                       if (extraMonths <= 3) return "72";
                       if (extraMonths === 4 || extraMonths === 5) return "78";
@@ -468,9 +464,9 @@ function getAgeKey() {
                       if (extraMonths >= 7 && extraMonths <= 9) return "78";
                       if (extraMonths >= 10 && extraMonths <= 11) return "84";
                      }
-                  else if (currentYears === 7) return "84";
-            }
-    return "out_of_range";
+                      else if (currentYears === 7){ return "84";}
+                 
+    
 }
 
 
